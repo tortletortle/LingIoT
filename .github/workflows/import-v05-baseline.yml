@@ -26,8 +26,10 @@ jobs:
           echo '171168eb4bcc2cc32a85aa7bb5c17f618f877d7c70179d3c65c7f2303671d515  /tmp/LingIoT-v0.5-source.tar.xz' | sha256sum --check
           mkdir -p baseline/v0.5
           tar -xJf /tmp/LingIoT-v0.5-source.tar.xz -C baseline/v0.5 --strip-components=1
-          echo "Extracted source file count: $(find baseline/v0.5 -type f | wc -l)"
-          test "$(find baseline/v0.5 -type f | wc -l)" -eq 50
+          file_count="$(find baseline/v0.5 -type f | wc -l)"
+          echo "Extracted source file count: ${file_count}"
+          test "${file_count}" -eq 31
+          mv /tmp/LingIoT-v0.5-source.tar.xz baseline/LingIoT-v0.5-source.tar.xz
           rm -rf baseline/chunks
       - name: Commit imported source
         shell: bash
@@ -35,6 +37,6 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add baseline/v0.5 baseline/chunks
+          git add baseline/v0.5 baseline/LingIoT-v0.5-source.tar.xz baseline/chunks
           git commit -m 'chore: import complete V0.5 source baseline'
           git push
