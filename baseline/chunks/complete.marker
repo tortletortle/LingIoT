@@ -1,1 +1,1 @@
-All six base64 parts are staged. The import workflow verifies the SHA-256 before extracting the source tree.
+Retry 2: re-run the verified V0.5 baseline importer with visible archive diagnostics.
