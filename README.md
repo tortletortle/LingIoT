@@ -4,11 +4,11 @@ AI-assisted Android IoT control platform using speech-to-text, an LLM tool layer
 
 ## Baseline
 
-The initial V0.5 source snapshot is stored at `baseline/LingIoT-v0.5-source.zip`. It contains the Android app, ESP32 firmware, LIP v2 protocol, virtual board, tests, and CI workflow.
+The initial V0.5 source snapshot is stored at `baseline/LingIoT-v0.5-source.tar.xz`. It contains the Android app, ESP32 firmware, LIP v2 protocol, virtual board, tests, and CI workflow.
 
 - Version: V0.5
 - Source files in baseline archive: 50
-- Archive SHA-256: `6a239699f731ca3ad70a74e5a0fec9e97aff252d3789a244f97d8968c4577871`
+- Archive SHA-256: `171168eb4bcc2cc32a85aa7bb5c17f618f877d7c70179d3c65c7f2303671d515`
 - Host regression: C++ control tests, Java Wire tests, 44 Capabilities assertions, 51 VirtualBoard + Telemetry assertions all passed when rerun before upload.
 
 ## Build and validation
